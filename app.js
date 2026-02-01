@@ -22,6 +22,11 @@ const start = async () => {
         transports: ['websocket']
     })
 
+    // Root route to check if server is running
+    app.get('/', async (request, reply) => {
+        return { message: "Grocery App Backend is Running! 🚀" };
+    });
+
     await registerRoutes(app)
 
     await buildAdminRouter(app);
